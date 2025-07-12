@@ -6,18 +6,18 @@ import {
   getFromDb,
   loadFromLocal,
   clearData,
-  countInteractions
+  countInteractions,
+  incrementCounter
 } from './metodos.js';
 
 
 // Initialize the app when the DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
-  // Ensure the counter element exists before calling countInteractions
-  setTimeout(() => {
-    countInteractions(); // Count session interactions
-  }, 0);
   loadFromLocal(); // Load data from localStorage
   getFromDb(); // Load data from JSON server
+  window.requestAnimationFrame(() => {
+    countInteractions(); // Display the current session counter
+  });
 });
 
 
@@ -37,12 +37,14 @@ document.getElementById("userForm").addEventListener("submit", (e) => {
   toDb(nombre, edad); // Save to JSON server
   loadFromLocal(); // Update local display
   getFromDb(); // Update server display
+  incrementCounter(); // Increment and update the session counter
   document.getElementById("userForm").reset(); // Reset form
 });
 
 
 // Handle clear data button
-document.getElementById("limpiar").addEventListener("click", (e) => {
+document.getElementById("limpiar").addEventListener("click", async (e) => {
   e.preventDefault(); // Prevent default if button is inside a form
-  clearData();
+  await clearData();
+  countInteractions(); // Reset the counter display after clearing
 });

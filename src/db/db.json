@@ -1,14 +1,19 @@
 {
   "users": [
     {
-      "nombre": "felipe",
+      "nombre": "1",
       "edad": "1",
       "id": 1
     },
     {
-      "nombre": "felipe",
-      "edad": "2",
+      "nombre": "1",
+      "edad": "1",
       "id": 2
+    },
+    {
+      "nombre": "1",
+      "edad": "1",
+      "id": 3
     }
   ]
 }
