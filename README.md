@@ -1,5 +1,8 @@
 # Dominando el DOM
 
+<img width="633" height="500" alt="image" src="https://github.com/user-attachments/assets/55d8361f-4a1b-467d-a4aa-a96c90643d3f" />
+
+
 This project is a simple web application for managing user data using the DOM, localStorage, and a JSON server. It allows users to:
 
 - Add a name and age via a form
